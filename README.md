@@ -1,2 +1,2 @@
-# pet-clinic
+# sf-petclinic
 Spring Framework Pet Clinic
