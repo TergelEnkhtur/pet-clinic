@@ -5,6 +5,27 @@
     <title>List of Pet Owners</title>
 </head>
 <body>
-  <h1 th:text="'List of Owners'">List of Owerns...</h1>
+<!--/*@thymesVar id="owner" type="guru.springframework.sfpetclinic.model.Owner"*/-->
+<!-- HTML comment so that IntelliJ knows where to get "owner"-->
+    <h1 th:text="'List of Owners'">List of Owners...</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- ? is the null safe operator -->
+        <!-- <td th:text="${owner?.id}">1</td> determined we didn't need it -->
+        <tr th:each="owner : ${owners}">
+            <td th:text="${owner.id}">1</td>
+            <td th:text="${owner.firstName}">Hanzo</td>
+            <td th:text="${owner.lastName}">Shimada</td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>
